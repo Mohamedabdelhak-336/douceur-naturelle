@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique de Miel - Douceur Naturelle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes beeFly {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-10px) translateX(50px);
+            }
+            50% {
+                transform: translateY(10px) translateX(100px);
+            }
+            75% {
+                transform: translateY(-10px) translateX(150px);
+            }
+            100% {
+                transform: translateY(0) translateX(200px);
+            }
+        }
+        .animated {
+            animation-duration: 2s;
+            animation-fill-mode: both;
+        }
+        .fadeIn {
+            animation-name: fadeIn;
+        }
+        .bee {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('img/bee.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: beeFly 6s infinite linear;
+        }
+        .nature-section {
+            background-image: url('img/nature.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .nature-section .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+            <div class="container">
+                <a class="navbar-brand" href="#">Douceur Naturelle</a>
+              
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="produits.html">Produits</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section d’introduction avec animation -->
+        <section class="text-center p-5 bg-light position-relative">
+            <div class="bee" style="top: 20%; left: 10%;"></div>
+            <div class="bee" style="top: 50%; left: 5%; animation-delay: 1s;"></div>
+            <div class="bee" style="top: 70%; left: 15%; animation-delay: 2s;"></div>
+            <div class="container">
+                <h1 class="mb-4 animated fadeIn">Bienvenue chez Douceur Naturelle</h1>
+                <p class="animated fadeIn" style="animation-delay: 1s;">Savourez la douceur de la nature avec nos miels purs et authentiques.</p>
+                <a href="produits.html" class="btn btn-warning animated fadeIn" style="animation-delay: 2s;">Voir nos produits</a>
+            </div>
+        </section>
+
+        <!-- Section sur les abeilles -->
+        <section class="container my-5">
+            <h2 class="text-center mb-4 animated fadeIn">Les Abeilles, nos alliées</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="img/abeille.jpg" alt="Abeille" class="img-fluid rounded shadow animated slideInLeft">
+                </div>
+                <div class="col-md-6">
+                    <p class="animated fadeIn" style="animation-delay: 1s;">Les abeilles sont essentielles à notre écosystème. Elles pollinisent les plantes et produisent du miel, un aliment naturel aux innombrables bienfaits pour la santé.</p>
+                    <p class="animated fadeIn" style="animation-delay: 1.5s;">En achetant nos produits, vous soutenez la préservation de ces créatures indispensables.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section sur les types de miel -->
+        <section class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-4 animated fadeIn">Nos Types de Miel</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card h-100 animated slideInLeft" style="animation-delay: 1s;">
+                            <img src="img/miel_acacia.jpg" class="card-img-top" alt="Miel d'Acacia">
+                            <div class="card-body">
+                                <h5 class="card-title">Miel d'Acacia</h5>
+                                <p class="card-text">Un miel doux et floral, idéal pour vos desserts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 animated fadeIn" style="animation-delay: 1.5s;">
+                            <img src="img/miel_fleurs.jpg" class="card-img-top" alt="Miel de Fleurs">
+                            <div class="card-body">
+                                <h5 class="card-title">Miel de Fleurs</h5>
+                                <p class="card-text">Un goût riche et varié qui reflète la diversité florale.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 animated slideInRight" style="animation-delay: 2s;">
+                            <img src="img/miel_forets.jpg" class="card-img-top" alt="Miel de Forêts">
+                            <div class="card-body">
+                                <h5 class="card-title">Miel de Forêts</h5>
+                                <p class="card-text">Un miel sombre et intense, parfait pour vos thés.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section sur la nature -->
+        <section class="nature-section text-center py-5">
+            <div class="overlay">
+                <h2 class="animated fadeIn">La Beauté de la Nature</h2>
+                <p class="animated fadeIn" style="animation-delay: 1s;">Nos miels sont le reflet de paysages préservés et d'une nature généreuse.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3">
+        <p>&copy; 2024 Douceur Naturelle - Tous droits réservés - realise par Mohamed abdelhak</p>
+       
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
