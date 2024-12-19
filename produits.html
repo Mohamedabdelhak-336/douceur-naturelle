@@ -5,69 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Produits - Douceur Naturelle</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
         }
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
         }
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5);
         }
-        @keyframes beeFly {
-            0% {
-                transform: translateY(0) translateX(0);
-            }
-            25% {
-                transform: translateY(-10px) translateX(50px);
-            }
-            50% {
-                transform: translateY(10px) translateX(100px);
-            }
-            75% {
-                transform: translateY(-10px) translateX(150px);
-            }
-            100% {
-                transform: translateY(0) translateX(200px);
-            }
+        .content {
+            position: relative;
+            z-index: 1;
         }
-        .animated {
-            animation-duration: 2s;
-            animation-fill-mode: both;
-        }
-        .fadeIn {
-            animation-name: fadeIn;
-        }
-        .slideInLeft {
-            animation-name: slideInLeft;
-        }
-        .slideInRight {
-            animation-name: slideInRight;
-        }
+        header {
+    background-color: #ffc107; /* Couleur jaune */
+    padding: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre subtile */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Ligne de séparation légère */
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #070900 !important; /* Couleur noire */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Effet d'ombre légère */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
+    color: #070900; /* Couleur noire pour les liens */
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff; /* Noir pur au survol */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Effet d'ombre légère */
+}
+.navbar-toggler {
+    border: none;
+    background-color: #070900; /* Bouton noir */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFF' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FFF' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.container {
+    max-width: 1200px; /* Ajustement de la largeur pour un alignement parfait */
+}
+
+
         .product-section {
-            background-color: #f8f9fa;
             padding: 50px 0;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 15px;
+            color: #333;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .card img {
             height: 200px;
             object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #000;
+        }
+        .card-text {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        footer {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #555;
+            text-align: center;
+            padding: 10px 0;
         }
         .bee {
             position: absolute;
@@ -78,117 +114,146 @@
             background-repeat: no-repeat;
             animation: beeFly 6s infinite linear;
         }
+        @keyframes beeFly {
+            0% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-10px) translateX(50px); }
+            50% { transform: translateY(10px) translateX(100px); }
+            75% { transform: translateY(-10px) translateX(150px); }
+            100% { transform: translateY(0) translateX(200px); }
+        }
+        .text-center h1 {
+            color: #000;
+            font-size: 3.5rem;
+        }
+        .text-center p {
+            color: #000;
+            font-size: 1.25rem;
+        }
+        .text-center.p-5.position-relative {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc légèrement transparent */
+    color: #333; /* Texte en noir */
+    padding: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    text-align: center;
+    margin: 20px auto; /* Espacement autour de la section */
+    max-width: 8000px; /* Pour éviter que la section soit trop large */
+}
+
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-            <div class="container">
-                <a class="navbar-brand" href="#">Douceur Naturelle</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="produits.html">Produits</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="img/honey.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas les vidéos HTML5.
+        </video>
+    </div>
 
-    <main>
-        <!-- En-tête de la page avec animation des abeilles -->
-        <section class="text-center p-5 bg-light position-relative">
-            <div class="bee" style="top: 10%; left: 10%;"></div>
-            <div class="bee" style="top: 30%; left: 5%; animation-delay: 1s;"></div>
-            <div class="bee" style="top: 50%; left: 15%; animation-delay: 2s;"></div>
-            <h1 class="animated fadeIn">Nos Produits</h1>
-            <p class="animated fadeIn" style="animation-delay: 1s;">Découvrez notre gamme variée de miels naturels et savoureux.</p>
-        </section>
-
-        <!-- Section des produits -->
-        <section class="product-section">
-            <div class="container">
-                <div class="row">
-                    <!-- Miel d'Acacia -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 animated slideInLeft">
-                            <img src="img/miel_acacia.jpg" class="card-img-top" alt="Miel d'Acacia">
-                            <div class="card-body">
-                                <h5 class="card-title">Miel d'Acacia</h5>
-                                <p class="card-text">Un miel doux et floral, parfait pour vos desserts et thés.</p>
-                                <p class="text-success fw-bold">Prix : 12DT</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Miel de Fleurs -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 animated fadeIn" style="animation-delay: 1s;">
-                            <img src="img/miel_fleurs.jpg" class="card-img-top" alt="Miel de Fleurs">
-                            <div class="card-body">
-                                <h5 class="card-title">Miel de Fleurs</h5>
-                                <p class="card-text">Un mélange subtil de saveurs florales, riche en nutriments.</p>
-                                <p class="text-success fw-bold">Prix : 10DT</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Miel de Forêts -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 animated slideInRight" style="animation-delay: 2s;">
-                            <img src="img/miel_forets.jpg" class="card-img-top" alt="Miel de Forêts">
-                            <div class="card-body">
-                                <h5 class="card-title">Miel de Forêts</h5>
-                                <p class="card-text">Un miel sombre et intense, idéal pour les amateurs de goûts forts.</p>
-                                <p class="text-success fw-bold">Prix : 14DT</p>
-                            </div>
-                        </div>
+    <div class="content">
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="#">Douceur Naturelle</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="produits.html">Produits</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="row">
-                    <!-- Miel de Lavande -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 animated slideInLeft">
-                            <img src="img/miel_lavande.jpg" class="card-img-top" alt="Miel de Lavande">
-                            <div class="card-body">
-                                <h5 class="card-title">Miel de Lavande</h5>
-                                <p class="card-text">Un miel parfumé et délicatement sucré, très apaisant.</p>
-                                <p class="text-success fw-bold">Prix : 15DT</p>
+            </nav>
+        </header>
+        
+        
+        <main>
+            <!-- En-tête de la page avec animation des abeilles -->
+            <section class="text-center p-5 position-relative">
+                <div class="bee" style="top: 10%; left: 10%;"></div>
+                <div class="bee" style="top: 30%; left: 5%; animation-delay: 1s;"></div>
+                <div class="bee" style="top: 50%; left: 15%; animation-delay: 2s;"></div>
+                <h1>Nos Produits</h1>
+                <p>Découvrez notre gamme variée de miels naturels et savoureux.</p>
+            </section>
+            
+            <!-- Section des produits -->
+            <section class="product-section">
+                <div class="container">
+                    <div class="row">
+                        <!-- Produits -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <img src="img/miel_acacia.jpg" class="card-img-top" alt="Miel d'Acacia">
+                                <div class="card-body">
+                                    <h5 class="card-title">Miel d'Acacia</h5>
+                                    <p class="card-text">Un miel doux et floral, parfait pour vos desserts et thés.</p>
+                                    <p class="text-success fw-bold">Prix : 12DT</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Miel de Châtaignier -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 animated fadeIn" style="animation-delay: 1s;">
-                            <img src="img/miel_chataignier.jpg" class="card-img-top" alt="Miel de Châtaignier">
-                            <div class="card-body">
-                                <h5 class="card-title">Miel de Châtaignier</h5>
-                                <p class="card-text">Riche et corsé, avec une légère amertume caractéristique.</p>
-                                <p class="text-success fw-bold">Prix : 16DT</p>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <img src="img/miel_fleurs.jpg" class="card-img-top" alt="Miel de Fleurs">
+                                <div class="card-body">
+                                    <h5 class="card-title">Miel de Fleurs</h5>
+                                    <p class="card-text">Un mélange subtil de saveurs florales, riche en nutriments.</p>
+                                    <p class="text-success fw-bold">Prix : 10DT</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Miel de Thym -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 animated slideInRight" style="animation-delay: 2s;">
-                            <img src="img/miel_thym.jpg" class="card-img-top" alt="Miel de Thym">
-                            <div class="card-body">
-                                <h5 class="card-title">Miel de Thym</h5>
-                                <p class="card-text">Reconnu pour ses vertus antiseptiques et son goût unique.</p>
-                                <p class="text-success fw-bold">Prix : 17DT</p>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <img src="img/miel_forets.jpg" class="card-img-top" alt="Miel de Forêts">
+                                <div class="card-body">
+                                    <h5 class="card-title">Miel de Forêts</h5>
+                                    <p class="card-text">Un miel sombre et intense, idéal pour les amateurs de goûts forts.</p>
+                                    <p class="text-success fw-bold">Prix : 14DT</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <img src="img/miel_lavande.jpg" class="card-img-top" alt="Miel de Lavande">
+                                <div class="card-body">
+                                    <h5 class="card-title">Miel de Lavande</h5>
+                                    <p class="card-text">Un miel parfumé et délicatement sucré, très apaisant.</p>
+                                    <p class="text-success fw-bold">Prix : 15DT</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <img src="img/miel_chataignier.jpg" class="card-img-top" alt="Miel de Châtaignier">
+                                <div class="card-body">
+                                    <h5 class="card-title">Miel de Châtaignier</h5>
+                                    <p class="card-text">Riche et corsé, avec une légère amertume caractéristique.</p>
+                                    <p class="text-success fw-bold">Prix : 16DT</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <img src="img/miel_thym.jpg" class="card-img-top" alt="Miel de Thym">
+                                <div class="card-body">
+                                    <h5 class="card-title">Miel de Thym</h5>
+                                    <p class="card-text">Reconnu pour ses vertus antiseptiques et son goût unique.</p>
+                                    <p class="text-success fw-bold">Prix : 17DT</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
 
-    <footer class="bg-dark text-white text-center p-3">
-        <p>&copy; 2024 Douceur Naturelle - Tous droits réservés</p>
-    </footer>
+        <footer>
+            <p>&copy; 2024 Douceur Naturelle - Tous droits réservés</p>
+        </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
